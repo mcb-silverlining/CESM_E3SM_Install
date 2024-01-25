@@ -13,6 +13,7 @@ gpgkey=https://yum.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.
 EOF
 
 # update the OS
+# do I really want upgrade? or update
 yum -y upgrade
 yum install -y lapack-devel
 
