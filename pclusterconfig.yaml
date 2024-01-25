@@ -1,0 +1,66 @@
+Region: us-east-2
+Image:
+  Os: alinux2
+HeadNode:
+  InstanceType: c6a.xlarge
+  Networking:
+    # change subnet to a subnet in AZ2 in Ohio
+    SubnetId: subnet-XXXXX
+  Ssh:
+    # change to a keyname in your account
+    KeyName: addkeynamehere
+  DisableSimultaneousMultithreading: true
+  LocalStorage:
+    RootVolume:
+      Size: 75
+      VolumeType: gp3
+  Iam:
+Scheduling:
+  Scheduler: slurm
+  SlurmQueues:
+    - Name: compute
+      CapacityType: ONDEMAND
+      ComputeResources:
+        - Name: compute-hpc6a
+          Instances:
+            - InstanceType: hpc6a.48xlarge
+          MinCount: 0
+          # Ensure that the MaxCount is within the account limit for hpc6a
+          MaxCount: 11
+          DisableSimultaneousMultithreading: true
+          Efa:
+            Enabled: true
+            GdrSupport: true
+      Networking:
+        SubnetIds:
+        #change subnet to a subnet in AZ2 in Ohio
+          - subnet-XXXXX
+        PlacementGroup:
+          Enabled: true
+      ComputeSettings:
+        LocalStorage:
+          RootVolume:
+            VolumeType: gp3
+            Size: 35
+      AllocationStrategy: lowest-price
+      Iam:
+  SlurmSettings: {}
+SharedStorage:
+  - MountDir: /opt/ncar
+    Name: Ebs0
+    StorageType: Ebs
+    EbsSettings:
+      Size: '25'
+      VolumeType: gp3
+      DeletionPolicy: Delete
+  - MountDir: /scratch
+    Name: FsxLustre0
+    StorageType: FsxLustre 
+    FsxLustreSettings:
+      StorageCapacity: 6000
+      PerUnitStorageThroughput: 12
+      DeploymentType: PERSISTENT_1
+      DataCompressionType: LZ4
+      StorageType: HDD
+      DeletionPolicy: Delete
+

@@ -1,0 +1,16 @@
+module load libfabric-aws
+export OMP_NUM_THREADS=1
+
+export I_MPI_OFI_LIBRARY_INTERNAL=0
+source /opt/intel/oneapi/setvars.sh --force > /dev/null
+export I_MPI_FABRICS=ofi
+export I_MPI_OFI_PROVIDER=efa
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/ncar/software/lib
+export PATH=/opt/ncar/software/bin:/opt/ncar/cmake/bin:.:$PATH
+export I_MPI_PMI_LIBRARY=/opt/slurm/lib/libpmi.so
+
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+
