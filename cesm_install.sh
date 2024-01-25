@@ -1,4 +1,5 @@
 #!/bin/bash
+##
 cd /opt/ncar
 git clone -b cesm2.1.4-rc.10 https://github.com/ESCOMP/CESM.git cesm
 cd cesm
