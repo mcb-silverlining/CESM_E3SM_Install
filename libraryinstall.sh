@@ -13,13 +13,12 @@ gpgkey=https://yum.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.
 EOF
 
 # update the OS
-# do I really want upgrade? or update
 yum -y upgrade
 yum install -y lapack-devel
 
 ####Install intel oneapi
 
-yum -y install intel-oneapi-compiler-fortran-2023.1.0 intel-oneapi-compiler-dpcpp-cpp-and-cpp-classic-2023.1.0 intel-oneapi-mpi-devel-2021.9.0
+yum -y install intel-oneapi-compiler-fortran-2023.2.1 intel-oneapi-compiler-dpcpp-cpp-and-cpp-classic-2023.2.1 intel-oneapi-mpi-devel-2021.10.0
 
 
 #removed these from compute nodes, will need environment variables in the .bashrc file

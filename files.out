@@ -1,0 +1,17 @@
+1) config_compilers.xml
+./cesm/cime/config/cesm/machines/config_compilers.xml
+<compiler MACH="aws-hpc6a" COMPILER="intel">
+
+2) config_machines.xml
+./cesm/cime/config/cesm/machines/config_machines.xml
+  <machine MACH="aws-hpc6a">
+    <NODENAME_REGEX>regular-dy-computehpc6a-.*</NODENAME_REGEX>
+
+3) config_batch.xml
+./cesm/cime/config/cesm/machines/config_batch.xml
+  <batch_system MACH="aws-hpc6a" type="slurm">
+
+4) config_pes.xml
+./cesm/cime_config/config_pes.xml
+    <mach name="aws-hpc6a">
+    <mach name='aws-hpc6a'>

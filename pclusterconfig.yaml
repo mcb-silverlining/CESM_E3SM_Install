@@ -15,6 +15,10 @@ HeadNode:
       Size: 75
       VolumeType: gp3
   Iam:
+    AdditionalIamPolicies:
+      - Policy: arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+  Imds:
+    Secured: false
 Scheduling:
   Scheduler: slurm
   SlurmQueues:
@@ -41,16 +45,18 @@ Scheduling:
         LocalStorage:
           RootVolume:
             VolumeType: gp3
-            Size: 35
+            Size: 40
       AllocationStrategy: lowest-price
       Iam:
+        AdditionalIamPolicies:
+          - Policy: arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
   SlurmSettings: {}
 SharedStorage:
   - MountDir: /opt/ncar
     Name: Ebs0
     StorageType: Ebs
     EbsSettings:
-      Size: '25'
+      Size: '35'
       VolumeType: gp3
       DeletionPolicy: Delete
   - MountDir: /scratch
@@ -63,4 +69,9 @@ SharedStorage:
       DataCompressionType: LZ4
       StorageType: HDD
       DeletionPolicy: Delete
+Imds:
+  ImdsSupport: v2.0
+Tags:
+  - Key: parallelcluster-ui
+    Value: 'true'
 
