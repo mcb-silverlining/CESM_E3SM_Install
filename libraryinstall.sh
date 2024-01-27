@@ -18,8 +18,9 @@ yum install -y lapack-devel
 
 ####Install intel oneapi
 
+# what is the best order to make sure that the version wanted is seen as the latest?
+yum -y install intel-oneapi-mkl-2023.1.0
 yum -y install intel-oneapi-compiler-fortran-2023.2.1 intel-oneapi-compiler-dpcpp-cpp-and-cpp-classic-2023.2.1 intel-oneapi-mpi-devel-2021.10.0
-
 
 #removed these from compute nodes, will need environment variables in the .bashrc file
 echo '/opt/ncar/software/lib' > /etc/ld.so.conf.d/ncar.conf
