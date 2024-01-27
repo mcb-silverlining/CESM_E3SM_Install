@@ -1,3 +1,18 @@
+
+sudo /bin/cp /opt/ncar/cesm/cime/config/cesm/machines/config_compilers.xml /opt/ncar/cesm/cime/config/cesm/machines/config_compilers.xml_orig
+sudo /bin/cp CESM_E3SM_Install/config_compilers.xml /opt/ncar/cesm/cime/config/cesm/machines/config_compilers.xml
+
+sudo /bin/cp /opt/ncar/cesm/cime/config/cesm/machines/config_machines.xml /opt/ncar/cesm/cime/config/cesm/machines/config_machines.xml_orig
+sudo /bin/cp CESM_E3SM_Install/config_machines.xml /opt/ncar/cesm/cime/config/cesm/machines/config_machines.xml
+
+sudo /bin/cp /opt/ncar/cesm/cime/config/cesm/machines/config_batch.xml /opt/ncar/cesm/cime/config/cesm/machines/config_batch.xml_orig
+sudo /bin/cp CESM_E3SM_Install/config_batch.xml /opt/ncar/cesm/cime/config/cesm/machines/config_batch.xml
+
+sudo /bin/cp /opt/ncar/cesm/cime_config/config_pes.xml /opt/ncar/cesm/cime_config/config_pes.xml_orig
+sudo /bin/cp CESM_E3SM_Install/config_pes.xml /opt/ncar/cesm/cime_config/config_pes.xml
+
+
+
 1) config_compilers.xml
 ./cesm/cime/config/cesm/machines/config_compilers.xml
 <compiler MACH="aws-hpc6a" COMPILER="intel">
