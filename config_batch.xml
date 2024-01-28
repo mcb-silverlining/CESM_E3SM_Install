@@ -60,7 +60,7 @@
       <arg flag="-p" name="$JOB_QUEUE"/>
     </submit_args>
     <queues>
-      <queue walltimemax="144:00:00" nodemin="1" nodemax="96">regular</queue>
+      <queue walltimemax="144:00:00" nodemin="1" nodemax="96">compute</queue>
     </queues>
   </batch_system>
 

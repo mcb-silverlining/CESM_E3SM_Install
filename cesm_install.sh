@@ -18,6 +18,9 @@ echo 'export NETCDF=/opt/ncar/software' >> /etc/profile.d/cesm.sh
 mkdir -p /scratch/ec2-user/inputdata
 chown -R ec2-user:ec2-user /scratch/ec2-user
 
+# Fixes an issue with file ownership when running cases 
+chown -R ec2-user:ec2-user /opt/ncar/cesm
+
 exit
 # place holder for these commands
 cd /home/ec2-user
