@@ -3,7 +3,7 @@
 cd /opt/ncar
 #git clone -b cesm2.1.4-rc.10 https://github.com/ESCOMP/CESM.git cesm
 #git clone -b release-cesm2.2.2 https://github.com/ESCOMP/CESM.git cesm
-git clone -b cesm2_3_alpha17a https://github.com/ESCOMP/CESM
+git clone -b cesm2_3_alpha17a https://github.com/ESCOMP/CESM.git cesm
 cd cesm
 svn --username=guestuser --password=friendly list https://svn-ccsm-models.cgd.ucar.edu << EOF
 p
