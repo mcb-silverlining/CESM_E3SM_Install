@@ -1,9 +1,6 @@
 #!/bin/bash
-##
 cd /opt/ncar
-#git clone -b cesm2.1.4-rc.10 https://github.com/ESCOMP/CESM.git cesm
-#git clone -b release-cesm2.2.2 https://github.com/ESCOMP/CESM.git cesm
-git clone -b cesm2_3_alpha17a https://github.com/ESCOMP/CESM.git cesm
+git clone -b cesm2.1.4-rc.10 https://github.com/ESCOMP/CESM.git cesm
 cd cesm
 svn --username=guestuser --password=friendly list https://svn-ccsm-models.cgd.ucar.edu << EOF
 p
@@ -18,7 +15,4 @@ echo 'export NETCDF=/opt/ncar/software' >> /etc/profile.d/cesm.sh
 
 mkdir -p /scratch/ec2-user/inputdata
 chown -R ec2-user:ec2-user /scratch/ec2-user
-
-# Fixes an issue with file ownership when running cases 
-chown -R ec2-user:ec2-user /opt/ncar/cesm
 
